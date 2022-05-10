@@ -1,0 +1,55 @@
+// 함수 사용 연습중 //
+
+******** 1번 ******** 
+def solution(num):
+    num -= 1
+    P.append("수")
+    while(num > 0):
+        if num % 2 == 1:
+            P.append("박")
+            num -= 1
+        else:
+            P.append("수")
+            num -= 1
+    for i in P:
+        print(i, end='')        
+
+P = []
+n = int(input("정수를 입력하세요: "))
+solution(n)
+
+******** 2번 ********
+def solution(n, m):
+    for i in range(0, m, 1):
+        print("*"*n)
+
+
+Star = list(map(int, input("n과 m의 값: ").split()))
+solution(Star[0], Star[1])
+
+******** 3번 ********
+def solution():
+    People_List = []
+    num = 1
+    Give_Up = list(map(int, input("수포자%d의 답: " %num).split()))
+    People_List.append(Give_Up)
+    for i in range(0, 2, 1):
+        num += 1
+        Give_Up = list(map(int, input("수포자%d의 답: " %num).split()))
+        People_List.append(Give_Up)
+    num = 0
+    Total = []
+    for j in range(0, 3, 1):
+        score = 0
+        num += 1
+        answer = list(map(int, input("수포자 %d의 정답은?(수포자%d의 정답 길이 = %d): " %(num, num, len(People_List[j]))).split()))
+        for k in range(0, len(People_List[j]), 1):
+            if answer[k] == People_List[j][k]:
+                score += 1
+            else:
+                score += 0
+        Total.append(score)
+    for Q in range(0, 3, 1):
+        print("수포자%d는 %d문제 맞혔습니다." %(Q+1, Total[Q]))
+
+solution()
