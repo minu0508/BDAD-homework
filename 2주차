@@ -1,0 +1,48 @@
+******** 1번 ********
+def solution():
+    x = list(map(int, input("x값과 n값을 입력: ").split()))
+    save = x[0]
+    total_list = []
+    total_list.append(x[0])
+
+    for i in range(0, x[1]-1, 1):
+        x[0] += save
+        total_list.append(x[0])
+
+    print(total_list)
+
+solution()
+
+******** 2번 ********
+answer = []
+save = 0
+total = 0
+
+def solution(X, N):
+    answer.append(X)
+    save = X
+    for i in range(N-1):
+        X += save
+        answer.append(X)
+    print(answer)
+
+Solution_Number = list(map(int, input("X값과 N값을 입력하세요: ").split()))
+solution(Solution_Number[0], Solution_Number[1])
+
+******** 3번 ********
+def solution(A, B):
+    total = A + B
+    if num % total == 0:
+        print("true")
+    else:
+        print("false")
+
+arr = list(map(int, input("두 자리 숫자를 입력하시오: ")))
+if len(arr) == 2:
+    num = (arr[0]*10) + arr[1]
+    solution(arr[0], arr[1])
+else:
+    print("다시 입력하세요(꼭! 두 자리 숫자여야 합니다.)")
+    arr = list(map(int, input("두 자리 숫자를 똑바로 입력하시오.: ")))
+    num = (arr[0]*10) + arr[1]
+    solution(arr[0], arr[1])
